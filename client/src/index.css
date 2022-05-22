@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.img {
+  height: calc(100vh - 144px);
+  width: 100%;
+  height: -moz-calc(100vh - 144px);
+  height: -webkit-calc(100vh - 144px);
+}
+
+.slick-next {
+  right: 95px !important;
+  z-index: 100;
+}
+.slick-next:before,
+.slick-prev:before {
+  font-size: 70px;
+}
+.slick-prev {
+  left: 50px !important;
+  z-index: 100;
+}
+
+.slick-dots {
+  margin: 0;
+  height: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  bottom: 18%;
+  width: 90px;
+  display: flex !important ;
+  left: 50%;
+}
+.slick-dots li button:before {
+  font-size: 18px;
+}
+.slick-dots li.slick-active button:before {
+  color: #8fbb00;
+}
+
+.css-185gdzj-MuiCardHeader-root {
+  position: relative !important;
+  bottom: 8px !important;
+  right: 9px !important;
+}
