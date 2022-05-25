@@ -31,7 +31,7 @@ const CommonCard = (props) => {
           image={props.image}
         />
         <CardContent className={classes.cardContent}>
-          <Typography variant="h6">{props.content}</Typography>
+          <Typography variant="h6">{props.description}</Typography>
         </CardContent>
         <CardHeader
           classes={{ title: classes.cardTitle }}

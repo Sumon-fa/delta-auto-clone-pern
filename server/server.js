@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
-
+const client = require('./db/db');
+client.connect();
 app.use(express.json());
 
 // Import all routes

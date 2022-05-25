@@ -1,27 +1,40 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { useStyles } from '../style/popularCarStyle';
-import { popularCarData } from '../componentData/popularCarData';
 import CommonCard from '../../common/CommonCard';
+import axios from 'axios';
 
 const PopularCar = () => {
   const classes = useStyles();
+  const [carData, setCardata] = useState([]);
+  const fetchCarData = useCallback(async () => {
+    try {
+      const { data } = await axios.get('/api/v1/cars');
+      console.log(data);
+      setCardata(data.cars);
+    } catch (err) {
+      console.log(err.message);
+    }
+  }, []);
+  useEffect(() => {
+    fetchCarData();
+  }, [fetchCarData]);
 
   return (
     <Box className={classes.section}>
       <Typography variant="h3" className={classes.title}>
-        Suosituimmat autot
+        Uudet autot
       </Typography>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 3 }}>
-        {popularCarData.map((car, i) => (
+        {carData.map((car) => (
           <CommonCard
-            key={i}
+            key={car.car_id}
             condition={car.condition}
             year={car.year}
             name={car.name}
             image={car.image}
-            content={car.content}
+            description={car.description}
             installment={car.installment}
             price={car.price}
             xs={3}

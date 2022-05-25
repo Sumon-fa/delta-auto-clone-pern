@@ -6,5 +6,6 @@ description VARCHAR(100) NOT NULL,
 year VARCHAR(4) NOT NULL,
 image TEXT NOT NULL,
 condition VARCHAR NOT NULL,
-installment NUMERIC(5,2) NOT NULL
+installment NUMERIC(5,2) NOT NULL,
+price INT NOT NULL
 );
