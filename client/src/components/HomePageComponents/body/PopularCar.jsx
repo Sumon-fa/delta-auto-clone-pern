@@ -10,7 +10,7 @@ const PopularCar = () => {
   const [carData, setCardata] = useState([]);
   const fetchCarData = useCallback(async () => {
     try {
-      const { data } = await axios.get('/api/v1/cars');
+      const { data } = await axios.get('/api/v1/admin/cars');
       console.log(data);
       setCardata(data.cars);
     } catch (err) {
