@@ -19,12 +19,13 @@ exports.newCar = async (req, res, next) => {
     );
     res.json(cars.rows);
   } catch (err) {
+    console.log(err)
     res.json(err);
   }
 };
 exports.getAllCars = async (req, res, next) => {
   try {
-    const cars = await client.query('SELECT * FROM car');
+    const cars = await client.query('select * from car');
     res.json({ cars: cars.rows });
   } catch (err) {
     console.log(err);
