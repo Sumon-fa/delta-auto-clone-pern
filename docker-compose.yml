@@ -3,7 +3,7 @@ services:
   postgres:
     image: "postgres:latest"
     environment:
-      - POSTGRES_PASSWORD=1234
+      - POSTGRES_PASSWORD=
 
   nginx:
     depends_on:
@@ -23,11 +23,11 @@ services:
       - /app/node_modules
       - ./server:/app
     environment:
-      - user=postgres
-      - host=postgres
-      - databaase=postgres
-      - password=1234
-      - dbport=5432
+      - user=
+      - host=
+      - databaase=
+      - password=
+      - dbport=
   client:
     stdin_open: true
     build:
