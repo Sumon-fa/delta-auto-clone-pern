@@ -3,23 +3,19 @@ import { Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { useStyles } from '../style/popularCarStyle';
 import CommonCard from '../../common/CommonCard';
-import axios from 'axios';
-
+import { useDispatch, useSelector } from 'react-redux'
+import { getAllCars } from '../../../store/actions/carActions';
 const PopularCar = () => {
   const classes = useStyles();
-  const [carData, setCardata] = useState([]);
-  const fetchCarData = useCallback(async () => {
-    try {
-      const { data } = await axios.get('/api/v1/admin/cars');
-      console.log(data);
-      setCardata(data.cars);
-    } catch (err) {
-      console.log(err.message);
-    }
-  }, []);
-  useEffect(() => {
-    fetchCarData();
-  }, [fetchCarData]);
+  const dispatch=useDispatch()
+  const { loading, error, cars } = useSelector(state => state.cars)
+    
+   useEffect(()=>{
+dispatch(getAllCars())
+
+   },[dispatch])
+
+  
 
   return (
     <Box className={classes.section}>
@@ -27,7 +23,7 @@ const PopularCar = () => {
         Uudet autot
       </Typography>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 3 }}>
-        {carData.map((car) => (
+        {cars.map((car) => (
           <CommonCard
             key={car.car_id}
             condition={car.condition}

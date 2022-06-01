@@ -1,0 +1,4 @@
+export const ALL_CAR_REQUEST = 'ALL_CAR_REQUEST'
+export const ALL_CAR_SUCCESS = 'ALL_CAR_SUCCESS'
+export const ALL_CAR_FAIL = 'ALL_CAR_FAIL'
+export const CLEAR_ERRORS="CLEAR_ERROS"

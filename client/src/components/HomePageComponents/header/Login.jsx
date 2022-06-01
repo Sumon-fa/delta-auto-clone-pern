@@ -70,7 +70,7 @@ const Login = (props) => {
             <GoogleLogin />
           </Grid>
           <Grid item xs={6} className={classes.googleSignIn}>
-            <FacebookLogin onClick={props.onClose} />
+            <FacebookLogin/>
           </Grid>
         </Grid>
       </Paper>

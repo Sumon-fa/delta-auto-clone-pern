@@ -17,7 +17,7 @@ exports.newCar = async (req, res, next) => {
       'INSERT INTO car (name,model,description,year,image,condition,installment,price) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *',
       [name, model, description, year, image, condition, installment, price]
     );
-    res.json(cars.rows);
+    res.json(cars);
   } catch (err) {
     console.log(err)
     res.json(err);

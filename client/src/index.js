@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { Provider } from 'react-redux'
+import store from './store/store';
 const dark = '#111';
 const white = '#fff';
 const blue = '#1281d5';
@@ -67,10 +69,11 @@ const theme = createTheme({
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <Provider store={store} >
   <BrowserRouter>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <App />
     </ThemeProvider>
-  </BrowserRouter>
+  </BrowserRouter></Provider>
 );
