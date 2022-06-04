@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"nodemon",
+    "dev": "nodemon",
     "start": "node server.js"
   },
   "author": "sumon",
@@ -15,7 +15,13 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "express-validator": "^6.14.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "2.0.16",
     "pg": "^8.7.3",
-    "nodemon": "2.0.16"
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/uuid": "^8.3.4"
   }
 }

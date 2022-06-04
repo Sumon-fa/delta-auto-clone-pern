@@ -19,6 +19,6 @@ export const secondNavData = [
     label: 'Vaihtoautot'
   },
   {
-    label: 'Huolto'
+    label: 'Blog'
   }
 ];
